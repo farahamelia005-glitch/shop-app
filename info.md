@@ -86,4 +86,4 @@ Sebelum mengumpulkan, uji katalog, pencarian, tambah keranjang, ubah kuantitas, 
 
 ---
 
-*Orchidia — Find Your Style, Express Yourself.*
+*Orchidia — For every version of you.*
