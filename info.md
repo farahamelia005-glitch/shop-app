@@ -83,7 +83,7 @@ Sebelum mengumpulkan, uji katalog, pencarian, tambah keranjang, ubah kuantitas, 
 
 - **GitHub:** https://github.com/farahamelia005-glitch/shop-app
 - **APK:** https://drive.google.com/file/d/18dzSWTekmv7iR2fZkKWHl_k9xTkySv6U/view?usp=drive_link
-- **Video demo (maksimal 15 menit, facecam dan suara asli):** [Tempel tautan]
+- **Video demo (maksimal 15 menit, facecam dan suara asli):** https://drive.google.com/file/d/1CCNqhC9K4Li2vrRfApCkKTal1OWYBMvo/view?usp=drive_link
 - **Laporan UAS:** [Tempel tautan Google Drive]
 
 ---
