@@ -66,7 +66,7 @@ Orchidia dikembangkan untuk memudahkan pengguna dalam melihat katalog produk, me
 
 * **Download APK:** [Masukkan tautan Google Drive APK]
 * **Video Demo Aplikasi:** [Masukkan tautan video demo]
-* **Repository GitHub:** https://github.com/farahamelia005-glitch/shop-app.git
+* **Repository GitHub:** https://github.com/farahamelia005-glitch/shop-app
 
 Video demo memperlihatkan alur penggunaan aplikasi mulai dari melihat katalog produk, mencari produk, mengelola keranjang, memilih alamat dan pengiriman, hingga menyelesaikan simulasi pembayaran.
 
