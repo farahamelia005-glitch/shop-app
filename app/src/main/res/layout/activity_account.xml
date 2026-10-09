@@ -78,7 +78,7 @@
                     android:layout_height="62dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text="F"
+                    android:text="U"
                     android:textColor="#F02A87"
                     android:textSize="25sp"
                     android:textStyle="bold" />
@@ -94,7 +94,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Farah Amelia"
+                        android:text="User"
                         android:textColor="#1F1F1F"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -103,7 +103,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="farahamelia@email.com"
+                        android:text="user@email.com"
                         android:textColor="#777777"
                         android:textSize="13sp" />
 
