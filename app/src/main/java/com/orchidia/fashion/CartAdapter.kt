@@ -16,12 +16,11 @@ class CartAdapter(
     private var products: List<Product>,
     private val selectedIds: MutableSet<String>,
     private val onSelectionChanged: () -> Unit,
-    private val onDelete: (Product) -> Unit
+    private val onCartChanged: (Product, Int) -> Unit
 ) : RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
 
-    class CartViewHolder(
-        itemView: View
-    ) : RecyclerView.ViewHolder(itemView) {
+    class CartViewHolder(itemView: View) :
+        RecyclerView.ViewHolder(itemView) {
 
         val checkProduct: CheckBox =
             itemView.findViewById(R.id.checkProduct)
@@ -52,15 +51,8 @@ class CartAdapter(
         parent: ViewGroup,
         viewType: Int
     ): CartViewHolder {
-
-        val view =
-            LayoutInflater
-                .from(parent.context)
-                .inflate(
-                    R.layout.item_cart,
-                    parent,
-                    false
-                )
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_cart, parent, false)
 
         return CartViewHolder(view)
     }
@@ -69,34 +61,19 @@ class CartAdapter(
         holder: CartViewHolder,
         position: Int
     ) {
+        val product = products[position]
 
-        val product =
-            products[position]
-
-        holder.imgProduct.setImageResource(
-            product.imageRes
-        )
-
-        holder.tvProductName.text =
-            product.name
-
-        holder.tvProductPrice.text =
-            formatRupiah(product.price)
-
+        holder.imgProduct.setImageResource(product.imageRes)
+        holder.tvProductName.text = product.name
+        holder.tvProductPrice.text = formatRupiah(product.price)
         holder.tvQuantity.text =
-            CartManager
-                .getQuantity(product.id)
-                .toString()
+            CartManager.getQuantity(product.id).toString()
 
-        holder.checkProduct.setOnCheckedChangeListener(
-            null
-        )
-
+        holder.checkProduct.setOnCheckedChangeListener(null)
         holder.checkProduct.isChecked =
             selectedIds.contains(product.id)
 
         holder.checkProduct.setOnCheckedChangeListener { _, checked ->
-
             if (checked) {
                 selectedIds.add(product.id)
             } else {
@@ -107,86 +84,63 @@ class CartAdapter(
         }
 
         holder.btnIncrease.setOnClickListener {
-
             CartManager.increase(product.id)
 
-            notifyItemChanged(position)
+            holder.tvQuantity.text =
+                CartManager.getQuantity(product.id).toString()
 
             onSelectionChanged()
+            onCartChanged(
+                product,
+                CartManager.getQuantity(product.id)
+            )
         }
 
         holder.btnDecrease.setOnClickListener {
-
             CartManager.decrease(product.id)
 
-            if (
-                CartManager.getQuantity(product.id) == 0
-            ) {
+            val quantity = CartManager.getQuantity(product.id)
+
+            if (quantity == 0) {
                 selectedIds.remove(product.id)
-                products =
-                    getCartProducts()
+                products = getCartProducts()
                 notifyDataSetChanged()
             } else {
-                notifyItemChanged(position)
+                holder.tvQuantity.text = quantity.toString()
             }
 
             onSelectionChanged()
+            onCartChanged(product, quantity)
         }
 
         holder.btnDelete.setOnClickListener {
+            CartManager.removeProduct(product.id)
+            selectedIds.remove(product.id)
 
-            CartManager.removeProduct(
-                product.id
-            )
-
-            selectedIds.remove(
-                product.id
-            )
-
-            products =
-                getCartProducts()
-
+            products = getCartProducts()
             notifyDataSetChanged()
 
             onSelectionChanged()
-
-            onDelete(product)
+            onCartChanged(product, 0)
         }
     }
 
-    override fun getItemCount(): Int {
-        return products.size
-    }
+    override fun getItemCount(): Int = products.size
 
     fun refresh() {
-
-        products =
-            getCartProducts()
-
+        products = getCartProducts()
         notifyDataSetChanged()
     }
 
     private fun getCartProducts(): List<Product> {
-
-        return CartManager
-            .getItems()
-            .keys
-            .mapNotNull {
-                ProductRepository.getById(it)
-            }
+        return CartManager.getItems().keys.mapNotNull { id ->
+            ProductRepository.getById(id)
+        }
     }
 
-    private fun formatRupiah(
-        value: Int
-    ): String {
-
-        return NumberFormat
-            .getNumberInstance(
-                Locale("id", "ID")
-            )
+    private fun formatRupiah(value: Int): String {
+        return NumberFormat.getNumberInstance(Locale("id", "ID"))
             .format(value)
-            .let {
-                "Rp $it"
-            }
+            .let { "Rp $it" }
     }
 }

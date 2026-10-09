@@ -4,12 +4,9 @@ object CartManager {
 
     private val items = mutableMapOf<String, Int>()
 
-    fun addProduct(
-        productId: String,
-        quantity: Int = 1
-    ) {
-        items[productId] =
-            (items[productId] ?: 0) + quantity
+    fun addProduct(productId: String, quantity: Int = 1) {
+        if (quantity <= 0) return
+        items[productId] = (items[productId] ?: 0) + quantity
     }
 
     fun removeProduct(productId: String) {
@@ -17,14 +14,11 @@ object CartManager {
     }
 
     fun increase(productId: String) {
-        items[productId] =
-            (items[productId] ?: 0) + 1
+        items[productId] = (items[productId] ?: 0) + 1
     }
 
     fun decrease(productId: String) {
-
-        val current =
-            items[productId] ?: return
+        val current = items[productId] ?: return
 
         if (current <= 1) {
             items.remove(productId)
@@ -41,30 +35,21 @@ object CartManager {
         return items.toMap()
     }
 
+    fun replaceItems(remoteItems: Map<String, Int>) {
+        items.clear()
+        items.putAll(remoteItems.filterValues { it > 0 })
+    }
+
     fun clear() {
         items.clear()
     }
 
-    fun calculateTotal(
-        selectedIds: Set<String>
-    ): Int {
+    fun calculateTotal(selectedIds: Set<String>): Int {
+        return selectedIds.sumOf { id ->
+            val product = ProductRepository.getById(id)
+            val quantity = getQuantity(id)
 
-        var total = 0
-
-        for (id in selectedIds) {
-
-            val product =
-                ProductRepository.getById(id)
-
-            val quantity =
-                getQuantity(id)
-
-            if (product != null) {
-                total +=
-                    product.price * quantity
-            }
+            if (product != null) product.price * quantity else 0
         }
-
-        return total
     }
 }

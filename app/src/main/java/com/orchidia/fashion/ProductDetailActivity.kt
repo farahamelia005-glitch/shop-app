@@ -1,7 +1,6 @@
 package com.orchidia.fashion
 
 import android.content.Intent
-import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -10,6 +9,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.orchidia.fashion.data.remote.SupabaseCartRepository
+import kotlinx.coroutines.launch
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -18,6 +20,7 @@ class ProductDetailActivity : AppCompatActivity() {
     private var productId: String? = null
     private var currentProduct: Product? = null
     private var selectedSize: String? = null
+    private var isAddingToBag = false
 
     private lateinit var btnWishlist: TextView
 
@@ -68,7 +71,6 @@ class ProductDetailActivity : AppCompatActivity() {
             .text = product.category
     }
 
-
     private fun setupSizeButtons() {
         val sizeButtons = listOf(
             R.id.sizeS to "S",
@@ -85,6 +87,7 @@ class ProductDetailActivity : AppCompatActivity() {
                     if (selected) Color.parseColor("#F02A87")
                     else Color.WHITE
                 )
+
                 button.setTextColor(
                     if (selected) Color.WHITE
                     else Color.parseColor("#555555")
@@ -100,12 +103,10 @@ class ProductDetailActivity : AppCompatActivity() {
         }
 
         findViewById<View>(R.id.tvSizeGuide).setOnClickListener {
-            androidx.appcompat.app.AlertDialog.Builder(this)
+            AlertDialog.Builder(this)
                 .setTitle("Orchidia Size Guide ♡")
                 .setMessage(
-                    "S — Small\n\n" +
-                            "M — Medium\n\n" +
-                            "L — Large\n\n" +
+                    "S — Small\n\nM — Medium\n\nL — Large\n\n" +
                             "Pilih ukuran yang paling nyaman untukmu."
                 )
                 .setPositiveButton("Got it", null)
@@ -113,20 +114,6 @@ class ProductDetailActivity : AppCompatActivity() {
         }
 
         updateSizeAppearance()
-    }
-
-    private fun showSizeGuide() {
-        AlertDialog.Builder(this)
-            .setTitle("Size Guide")
-            .setMessage(
-                "Find your perfect fit ♡\n\n" +
-                        "S — Small\n" +
-                        "M — Medium\n" +
-                        "L — Large\n\n" +
-                        "Pilih ukuran yang paling nyaman untukmu."
-            )
-            .setPositiveButton("Got it", null)
-            .show()
     }
 
     private fun setupButtons() {
@@ -140,49 +127,76 @@ class ProductDetailActivity : AppCompatActivity() {
             WishlistManager.toggleProduct(product.id)
             updateWishlistIcon()
 
-            val message = if (WishlistManager.isWishlisted(product.id)) {
-                "${product.name} added to wishlist ♡"
-            } else {
-                "${product.name} removed from wishlist"
-            }
+            val message =
+                if (WishlistManager.isWishlisted(product.id)) {
+                    "${product.name} added to wishlist ♡"
+                } else {
+                    "${product.name} removed from wishlist"
+                }
 
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
         }
 
         findViewById<View>(R.id.btnAddToBag)?.setOnClickListener {
-            addProductToBag()
+            addProductToBag(goToCart = false)
         }
 
         findViewById<View>(R.id.btnBuyNow)?.setOnClickListener {
-            val product = currentProduct ?: return@setOnClickListener
-
-            if (!validateSize()) return@setOnClickListener
-
-            CartManager.addProduct(product.id)
-            startActivity(Intent(this, CartActivity::class.java))
+            addProductToBag(goToCart = true)
         }
     }
 
-    private fun addProductToBag() {
+    private fun addProductToBag(goToCart: Boolean) {
         val product = currentProduct ?: return
 
-        if (!validateSize()) return
+        if (!validateSize() || isAddingToBag) return
 
-        CartManager.addProduct(product.id)
+        isAddingToBag = true
 
-        val sizeMessage = selectedSize?.let { " (Size $it)" } ?: ""
+        lifecycleScope.launch {
+            try {
+                val success = SupabaseCartRepository.add(
+                    this@ProductDetailActivity,
+                    product.id
+                )
 
-        Toast.makeText(
-            this,
-            "${product.name}$sizeMessage added to bag",
-            Toast.LENGTH_SHORT
-        ).show()
+                if (success) {
+                    // Perbarui keranjang lokal setelah server berhasil.
+                    CartManager.addProduct(product.id)
+
+                    val sizeMessage =
+                        selectedSize?.let { " (Size $it)" } ?: ""
+
+                    if (goToCart) {
+                        startActivity(
+                            Intent(
+                                this@ProductDetailActivity,
+                                CartActivity::class.java
+                            )
+                        )
+                    } else {
+                        Toast.makeText(
+                            this@ProductDetailActivity,
+                            "${product.name}$sizeMessage added to bag",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                } else {
+                    Toast.makeText(
+                        this@ProductDetailActivity,
+                        "Gagal menyimpan ke keranjang. Coba lagi.",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            } finally {
+                isAddingToBag = false
+            }
+        }
     }
 
     private fun validateSize(): Boolean {
         val product = currentProduct ?: return false
 
-        // Tas tidak memerlukan pilihan ukuran.
         if (product.category.equals("BAG", ignoreCase = true)) {
             return true
         }
@@ -201,7 +215,6 @@ class ProductDetailActivity : AppCompatActivity() {
 
     private fun updateWishlistIcon() {
         val product = currentProduct ?: return
-
         btnWishlist.text =
             if (WishlistManager.isWishlisted(product.id)) "♥" else "♡"
     }

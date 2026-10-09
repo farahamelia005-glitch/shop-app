@@ -62,4 +62,24 @@ object SupabaseApi {
             .build()
             .create(SupabaseApiService::class.java)
     }
+
+    val cartService: SupabaseCartService by lazy {
+        Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(client)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(SupabaseCartService::class.java)
+    }
+    private val retrofit: Retrofit by lazy {
+        Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(client) // WAJIB pakai client yang punya API key
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+
+    val orderService: SupabaseOrderService by lazy {
+        retrofit.create(SupabaseOrderService::class.java)
+    }
 }

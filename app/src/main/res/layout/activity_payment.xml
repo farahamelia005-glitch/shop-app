@@ -102,10 +102,11 @@
                         android:letterSpacing="0.06" />
 
                     <TextView
+                        android:id="@+id/tvPaymentTotal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="Rp 383.000"
+                        android:text="Rp0"
                         android:textColor="#F02A87"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -397,12 +398,11 @@
                 android:layout_height="55dp"
                 android:layout_marginTop="22dp"
                 android:backgroundTint="#F02A87"
-                android:text="PAY NOW • Rp 333.000"
+                android:text="PAY NOW"
                 android:textColor="#FFFFFF"
                 android:textSize="13sp"
                 android:textStyle="bold"
                 android:letterSpacing="0.04" />
-
         </LinearLayout>
 
     </ScrollView>
