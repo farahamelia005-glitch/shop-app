@@ -72,4 +72,4 @@ Video demo memperlihatkan alur penggunaan aplikasi mulai dari melihat katalog pr
 
 ---
 
-**Orchidia — Find Your Style, Express Yourself.** 🌸
+**Orchidia — For every version of you.** 🌸
