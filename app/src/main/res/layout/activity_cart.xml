@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FDFDFB">
+
+    <!-- HEADER -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="#FFFFFF">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:text="Shopping Bag"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#1F1F1F" />
+
+    </LinearLayout>
+
+
+    <!-- CART -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:clipToPadding="false" />
+
+
+    <!-- EMPTY -->
+
+    <TextView
+        android:id="@+id/tvEmptyBag"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Your bag is empty ♡"
+        android:textSize="17sp"
+        android:textColor="#777777"
+        android:visibility="gone" />
+
+
+    <!-- SUMMARY -->
+
+    <LinearLayout
+        android:id="@+id/layoutSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="18dp"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:id="@+id/tvSelectedItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selected Items: 0"
+            android:textSize="13sp"
+            android:textColor="#777777" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Subtotal"
+                android:textSize="14sp"
+                android:textColor="#555555" />
+
+            <TextView
+                android:id="@+id/tvSubtotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp 0"
+                android:textSize="14sp"
+                android:textColor="#1F1F1F" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Shipping"
+                android:textSize="14sp"
+                android:textColor="#555555" />
+
+            <TextView
+                android:id="@+id/tvShipping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp 15.000"
+                android:textSize="14sp"
+                android:textColor="#1F1F1F" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="14dp"
+            android:background="#EEEEEE" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TOTAL"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1F1F1F" />
+
+            <TextView
+                android:id="@+id/tvTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp 0"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="#F02A87" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnCheckout"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="15dp"
+            android:text="PROCEED TO CHECKOUT"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:backgroundTint="#F02A87" />
+
+    </LinearLayout>
+
+</LinearLayout>

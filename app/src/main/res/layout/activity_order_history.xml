@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FDFDFB"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/btnBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:text="‹"
+        android:textColor="#1F1F1F"
+        android:textSize="32sp"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="ORDER HISTORY"
+        android:textColor="#F02A87"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/tvOrderList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Loading orders..."
+            android:textColor="#2C2F30"
+            android:textSize="14sp"
+            android:lineSpacingExtra="5dp"
+            android:padding="16dp"
+            android:background="#FFFFFF" />
+
+    </ScrollView>
+
+</LinearLayout>

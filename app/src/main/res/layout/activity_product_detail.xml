@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+  <!-- HEADER -->
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="58dp"
+      android:gravity="center_vertical"
+      android:paddingStart="16dp"
+      android:paddingEnd="16dp">
+
+    <TextView
+        android:id="@+id/btnBack"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:text="‹"
+        android:textColor="#1E1E22"
+        android:textSize="28sp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="orchidia"
+        android:textColor="#F02A87"
+        android:textSize="29sp"
+        android:fontFamily="serif" />
+
+    <TextView
+        android:id="@+id/btnShare"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:text="↗"
+        android:textColor="#1E1E22"
+        android:textSize="19sp" />
+
+  </LinearLayout>
+
+  <!-- CONTENT -->
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
+
+      <!-- PRODUCT IMAGE -->
+      <FrameLayout
+          android:layout_width="match_parent"
+          android:layout_height="350dp"
+          android:layout_marginStart="16dp"
+          android:layout_marginEnd="16dp"
+          android:background="#F4F4F5">
+
+        <ImageView
+            android:id="@+id/imgProduct"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="Product image" />
+
+        <TextView
+            android:id="@+id/btnWishlist"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="12dp"
+            android:gravity="center"
+            android:text="♡"
+            android:textColor="#F02A87"
+            android:textSize="25sp"
+            android:background="#FFFFFF" />
+
+      </FrameLayout>
+
+      <!-- PRODUCT INFORMATION -->
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:paddingStart="20dp"
+          android:paddingEnd="20dp">
+
+        <!-- PRODUCT NAME -->
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Product Name"
+            android:textColor="#1E1E22"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+        <!-- CATEGORY -->
+        <TextView
+            android:id="@+id/tvProductCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="CATEGORY"
+            android:textColor="#999999"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <!-- RATING -->
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="★ 4.9  •  128 Reviews"
+            android:textColor="#777777"
+            android:textSize="11sp" />
+
+        <!-- PRICE -->
+        <TextView
+            android:id="@+id/tvProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Rp 0"
+            android:textColor="#F02A87"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- SIZE -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+          <TextView
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:text="SIZE"
+              android:textColor="#1E1E22"
+              android:textSize="11sp"
+              android:textStyle="bold" />
+
+          <TextView
+              android:id="@+id/tvSizeGuide"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Size Guide"
+              android:textColor="#777777"
+              android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sizeContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+          <TextView
+              android:id="@+id/sizeS"
+              android:layout_width="42dp"
+              android:layout_height="35dp"
+              android:gravity="center"
+              android:text="S"
+              android:textColor="#555555"
+              android:textSize="11sp"
+              android:background="#FFFFFF"
+              android:clickable="true"
+              android:focusable="true" />
+
+          <TextView
+              android:id="@+id/sizeM"
+              android:layout_width="42dp"
+              android:layout_height="35dp"
+              android:layout_marginStart="8dp"
+              android:gravity="center"
+              android:text="M"
+              android:textColor="#FFFFFF"
+              android:textSize="11sp"
+              android:background="#E6A0BF"
+              android:clickable="true"
+              android:focusable="true" />
+
+          <TextView
+              android:id="@+id/sizeL"
+              android:layout_width="42dp"
+              android:layout_height="35dp"
+              android:layout_marginStart="8dp"
+              android:gravity="center"
+              android:text="L"
+              android:textColor="#555555"
+              android:textSize="11sp"
+              android:background="#FFFFFF"
+              android:clickable="true"
+              android:focusable="true" />
+
+        </LinearLayout>
+
+        <!-- PRODUCT FEATURES -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+          <LinearLayout
+              android:layout_width="0dp"
+              android:layout_height="95dp"
+              android:layout_weight="1"
+              android:orientation="vertical"
+              android:padding="12dp"
+              android:background="#F8E6EE">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✧ Soft Material"
+                android:textColor="#1E1E22"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Premium fabric that feels soft and comfortable."
+                android:textColor="#777777"
+                android:textSize="9sp" />
+
+          </LinearLayout>
+
+          <Space
+              android:layout_width="8dp"
+              android:layout_height="1dp" />
+
+          <LinearLayout
+              android:layout_width="0dp"
+              android:layout_height="95dp"
+              android:layout_weight="1"
+              android:orientation="vertical"
+              android:padding="12dp"
+              android:background="#E2F1E7">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="♡ Classic Cut"
+                android:textColor="#1E1E22"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Designed for a flattering and effortless silhouette."
+                android:textColor="#777777"
+                android:textSize="9sp" />
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- SHIPPING -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="⌁  Free shipping on orders over Rp 500.000"
+            android:textColor="#555555"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="↻  30-day easy exchange &amp; returns"
+            android:textColor="#555555"
+            android:textSize="10sp" />
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+  </ScrollView>
+
+  <!-- BOTTOM ACTION -->
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="72dp"
+      android:gravity="center_vertical"
+      android:orientation="horizontal"
+      android:paddingStart="16dp"
+      android:paddingEnd="16dp"
+      android:background="#FFFFFF"
+      android:elevation="8dp">
+
+    <Button
+        android:id="@+id/btnBuyNow"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:text="Buy Now"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:backgroundTint="#E28AB0" />
+
+    <TextView
+        android:id="@+id/btnAddToBag"
+        android:layout_width="52dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:text="🛍"
+        android:textColor="#1E1E22"
+        android:textSize="20sp"
+        android:background="#F3F3F5" />
+
+  </LinearLayout>
+
+</LinearLayout>

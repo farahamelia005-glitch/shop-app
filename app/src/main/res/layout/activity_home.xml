@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+        <TextView
+            android:id="@+id/tvLogo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="orchidia"
+            android:textColor="#F02A87"
+            android:textSize="28sp"
+            android:fontFamily="serif" />
+
+        <ImageButton
+            android:id="@+id/btnSearch"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_menu_search"
+            android:contentDescription="Search" />
+
+        <ImageButton
+            android:id="@+id/btnBag"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_bag"
+            android:contentDescription="Shopping Bag" />
+
+    </LinearLayout>
+
+    <!-- Scrollable Home -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Hero -->
+            <ImageView
+                android:id="@+id/imgHero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/orchidia_home_banner"
+                android:contentDescription="Orchidia Fashion Collection" />
+
+            <!-- Explore Categories -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="24dp"
+                android:paddingBottom="14dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Explore Categories"
+                    android:textColor="#1E1E22"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvSeeAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="See All"
+                    android:textColor="#F02A87"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+            </LinearLayout>
+
+            <!-- Category Icons -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp">
+
+                    <TextView
+                        android:id="@+id/categoryTop"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:gravity="center"
+                        android:text="TOP"
+                        android:textColor="#1E1E22"
+                        android:textSize="11sp"
+                        android:background="#FCE5EF"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/categoryPants"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="12dp"
+                        android:gravity="center"
+                        android:text="PANTS"
+                        android:textColor="#1E1E22"
+                        android:textSize="11sp"
+                        android:background="#F3F3F5"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/categoryBag"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="12dp"
+                        android:gravity="center"
+                        android:text="BAG"
+                        android:textColor="#1E1E22"
+                        android:textSize="11sp"
+                        android:background="#FCE5EF"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/categoryDress"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="12dp"
+                        android:gravity="center"
+                        android:text="DRESS"
+                        android:textColor="#1E1E22"
+                        android:textSize="11sp"
+                        android:background="#F3F3F5"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/categorySkirt"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="12dp"
+                        android:gravity="center"
+                        android:text="SKIRT"
+                        android:textColor="#1E1E22"
+                        android:textSize="11sp"
+                        android:background="#FCE5EF"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <!-- ================= BEST SELLER ================= -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="28dp">
+
+                <!-- TITLE -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="18dp"
+                    android:paddingEnd="18dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="BEST SELLER"
+                        android:textColor="#1F1F1F"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.08" />
+
+                </LinearLayout>
+
+
+                <!-- PRODUCTS -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingStart="11dp"
+                        android:paddingEnd="11dp">
+
+
+                        <!-- ================= PRODUCT 1 ================= -->
+                        <LinearLayout
+                            android:id="@+id/homeFloralJeans"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="7dp"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="220dp"
+                                android:background="#F4F4F5">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/floral_jeans"
+                                    android:scaleType="centerCrop"
+                                    android:alpha="0.65"
+                                    android:contentDescription="Floral Jeans" />
+
+                                <!-- BEST SELLER LABEL -->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="28dp"
+                                    android:layout_gravity="top|start"
+                                    android:layout_margin="10dp"
+                                    android:paddingStart="9dp"
+                                    android:paddingEnd="9dp"
+                                    android:gravity="center"
+                                    android:background="#1F1F1F"
+                                    android:text="BEST SELLER"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="9sp"
+                                    android:textStyle="bold" />
+
+                                <!-- HEART -->
+                                <TextView
+                                    android:layout_width="34dp"
+                                    android:layout_height="34dp"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="10dp"
+                                    android:background="#FFFFFF"
+                                    android:gravity="center"
+                                    android:text="♥"
+                                    android:textColor="#F02A87"
+                                    android:textSize="18sp" />
+
+                            </FrameLayout>
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="9dp"
+                                android:text="Floral Jeans"
+                                android:textColor="#1F1F1F"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Rp 239.000"
+                                android:textColor="#F02A87"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+
+                        <!-- ================= PRODUCT 2 ================= -->
+                        <LinearLayout
+                            android:id="@+id/homeMelisaShirt"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="7dp"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="220dp"
+                                android:background="#FCE5EF">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/melisa_shirt"
+                                    android:scaleType="centerCrop"
+                                    android:alpha="0.65"
+                                    android:contentDescription="Melisa Shirt" />
+
+                                <!-- BEST SELLER LABEL -->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="28dp"
+                                    android:layout_gravity="top|start"
+                                    android:layout_margin="10dp"
+                                    android:paddingStart="9dp"
+                                    android:paddingEnd="9dp"
+                                    android:gravity="center"
+                                    android:background="#1F1F1F"
+                                    android:text="BEST SELLER"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="9sp"
+                                    android:textStyle="bold" />
+
+                                <!-- HEART -->
+                                <TextView
+                                    android:layout_width="34dp"
+                                    android:layout_height="34dp"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="10dp"
+                                    android:background="#FFFFFF"
+                                    android:gravity="center"
+                                    android:text="♥"
+                                    android:textColor="#F02A87"
+                                    android:textSize="18sp" />
+
+                            </FrameLayout>
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="9dp"
+                                android:text="Melisa Shirt"
+                                android:textColor="#1F1F1F"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Rp 275.000"
+                                android:textColor="#F02A87"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:elevation="8dp">
+
+        <!-- HOME -->
+        <TextView
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="⌂&#10;Home"
+            android:textColor="#F02A87"
+            android:textSize="11sp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- SHOP -->
+        <TextView
+            android:id="@+id/navShop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Shop"
+            android:textColor="#777777"
+            android:textSize="11sp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- WISHLIST -->
+        <TextView
+            android:id="@+id/navWishlist"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="♡&#10;Wishlist"
+            android:textColor="#777777"
+            android:textSize="11sp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- BAG -->
+        <TextView
+            android:id="@+id/navBag"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Bag"
+            android:textColor="#777777"
+            android:textSize="11sp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- ACCOUNT -->
+        <TextView
+            android:id="@+id/navAccount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Account"
+            android:textColor="#777777"
+            android:textSize="11sp"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+</LinearLayout>

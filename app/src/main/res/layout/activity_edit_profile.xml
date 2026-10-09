@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#FDFDFB">
+
+    <TextView
+        android:id="@+id/btnBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:text="‹"
+        android:textSize="32sp"
+        android:textColor="#1F1F1F"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="EDIT PROFILE"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#F02A87" />
+
+    <EditText
+        android:id="@+id/etProfileName"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="24dp"
+        android:hint="Full name"
+        android:inputType="textPersonName"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/etProfileEmail"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:hint="Email address"
+        android:inputType="textEmailAddress"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/btnSaveProfile"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="24dp"
+        android:text="SAVE CHANGES"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#F02A87" />
+
+</LinearLayout>

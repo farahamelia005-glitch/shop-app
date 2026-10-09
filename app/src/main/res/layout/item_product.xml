@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="6dp"
+    android:background="#FFFFFF"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/imgProduct"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="Product image" />
+
+    <TextView
+        android:id="@+id/tvProductName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Product Name"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#1F1F1F" />
+
+    <TextView
+        android:id="@+id/tvProductCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="TOP"
+        android:textSize="11sp"
+        android:textColor="#999999" />
+
+    <TextView
+        android:id="@+id/tvProductPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Rp 199.000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#F02A87" />
+
+</LinearLayout>

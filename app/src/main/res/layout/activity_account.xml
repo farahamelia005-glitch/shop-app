@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FDFDFB">
+
+    <!-- ================= HEADER ================= -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:background="#FFFFFF">
+
+        <!-- BACK -->
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="‹"
+            android:textColor="#1F1F1F"
+            android:textSize="32sp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- TITLE -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="ACCOUNT"
+            android:textColor="#1F1F1F"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.12" />
+
+        <!-- SPACER -->
+        <View
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+
+
+    <!-- ================= CONTENT ================= -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+
+            <!-- ================= PROFILE ================= -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="18dp"
+                android:background="#FCE5EF">
+
+                <!-- AVATAR -->
+                <TextView
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text="F"
+                    android:textColor="#F02A87"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <!-- USER INFO -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Farah Amelia"
+                        android:textColor="#1F1F1F"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="farahamelia@email.com"
+                        android:textColor="#777777"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btnEditProfile"
+                    android:layout_width="55dp"
+                    android:layout_height="36dp"
+                    android:gravity="center"
+                    android:text="EDIT"
+                    android:textColor="#F02A87"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <!-- ================= MY ACCOUNT ================= -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="MY ACCOUNT"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1" />
+
+
+            <!-- ORDER HISTORY -->
+            <LinearLayout
+                android:id="@+id/accountOrderHistory"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:background="#FFFFFF"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:gravity="center"
+                    android:text="▣"
+                    android:textColor="#F02A87"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:text="Order History"
+                    android:textColor="#1F1F1F"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="›"
+                    android:textColor="#777777"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+
+            <!-- WISHLIST -->
+            <LinearLayout
+                android:id="@+id/accountWishlist"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:background="#FFFFFF"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:gravity="center"
+                    android:text="♥"
+                    android:textColor="#F02A87"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:text="Wishlist"
+                    android:textColor="#1F1F1F"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="›"
+                    android:textColor="#777777"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+
+            <!-- SHIPPING ADDRESS -->
+            <LinearLayout
+                android:id="@+id/accountAddress"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:background="#FFFFFF"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:gravity="center"
+                    android:text="⌖"
+                    android:textColor="#F02A87"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:text="Shipping Address"
+                    android:textColor="#1F1F1F"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="›"
+                    android:textColor="#777777"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <!-- ================= SETTINGS ================= -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="SETTINGS"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1" />
+
+
+            <!-- SETTINGS ROW -->
+            <LinearLayout
+                android:id="@+id/accountSettings"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:background="#FFFFFF">
+
+                <TextView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:gravity="center"
+                    android:text="⚙"
+                    android:textColor="#F02A87"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:text="Settings"
+                    android:textColor="#1F1F1F"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="›"
+                    android:textColor="#777777"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+
+            <!-- LOG OUT -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="22dp"
+                android:gravity="center"
+                android:text="LOG OUT"
+                android:textColor="#F02A87"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"
+                android:background="#FFFFFF" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <!-- ================= BOTTOM NAV ================= -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:elevation="8dp">
+
+        <!-- HOME -->
+        <TextView
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="⌂&#10;HOME"
+            android:textColor="#777777"
+            android:textSize="10sp" />
+
+        <!-- SHOP -->
+        <TextView
+            android:id="@+id/navShop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="♡&#10;SHOP"
+            android:textColor="#777777"
+            android:textSize="10sp" />
+
+        <!-- WISHLIST -->
+        <TextView
+            android:id="@+id/navWishlist"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="♥&#10;WISHLIST"
+            android:textColor="#777777"
+            android:textSize="10sp" />
+
+        <!-- BAG -->
+        <TextView
+            android:id="@+id/navBag"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="□&#10;BAG"
+            android:textColor="#777777"
+            android:textSize="10sp" />
+
+        <!-- ACCOUNT -->
+        <TextView
+            android:id="@+id/navAccount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="♙&#10;ACCOUNT"
+            android:textColor="#F02A87"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>

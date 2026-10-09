@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FDFDFB">
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="#FFFFFF">
+
+        <!-- BACK -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="Back" />
+
+        <!-- TITLE -->
+        <TextView
+            android:id="@+id/tvCategoryTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:text="Shop"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#1F1F1F"
+            android:fontFamily="sans" />
+
+        <!-- SEARCH -->
+        <ImageButton
+            android:id="@+id/btnSearch"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_menu_search"
+            android:contentDescription="Search" />
+
+        <!-- BAG -->
+        <ImageButton
+            android:id="@+id/btnBag"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="4dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_bag"
+            android:contentDescription="Shopping Bag" />
+
+    </LinearLayout>
+
+
+    <!-- CATEGORY FILTER -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:scrollbars="none"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/categoryAll"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:layout_marginEnd="8dp"
+                android:text="ALL"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/bg_category_selected" />
+
+            <TextView
+                android:id="@+id/categoryTop"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:layout_marginEnd="8dp"
+                android:text="TOP"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#1F1F1F"
+                android:background="@drawable/bg_category_unselected" />
+
+            <TextView
+                android:id="@+id/categoryPants"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:layout_marginEnd="8dp"
+                android:text="PANTS"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#1F1F1F"
+                android:background="@drawable/bg_category_unselected" />
+
+            <TextView
+                android:id="@+id/categoryBag"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:layout_marginEnd="8dp"
+                android:text="BAG"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#1F1F1F"
+                android:background="@drawable/bg_category_unselected" />
+
+            <TextView
+                android:id="@+id/categoryDress"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:layout_marginEnd="8dp"
+                android:text="DRESS"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#1F1F1F"
+                android:background="@drawable/bg_category_unselected" />
+
+            <TextView
+                android:id="@+id/categorySkirt"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:text="SKIRT"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#1F1F1F"
+                android:background="@drawable/bg_category_unselected" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+    <!-- PRODUCT COUNT / TITLE -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:id="@+id/tvCategoryName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="All Products"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="#1F1F1F" />
+
+        <TextView
+            android:id="@+id/tvProductCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 items"
+            android:textSize="12sp"
+            android:textColor="#777777" />
+
+    </LinearLayout>
+
+
+    <!-- PRODUCT LIST -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProducts"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="12dp"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:overScrollMode="never" />
+
+
+    <!-- BOTTOM NAVIGATION -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:elevation="8dp">
+
+        <TextView
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="⌂\nHome"
+            android:textSize="11sp"
+            android:textColor="#777777" />
+
+        <TextView
+            android:id="@+id/navShop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="◈\nShop"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="#F02A87" />
+
+        <TextView
+            android:id="@+id/navWishlist"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="♡\nWishlist"
+            android:textSize="11sp"
+            android:textColor="#777777" />
+
+        <TextView
+            android:id="@+id/navBag"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="□\nBag"
+            android:textSize="11sp"
+            android:textColor="#777777" />
+
+        <TextView
+            android:id="@+id/navAccount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="♙\nAccount"
+            android:textSize="11sp"
+            android:textColor="#777777" />
+
+    </LinearLayout>
+
+</LinearLayout>
