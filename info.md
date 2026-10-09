@@ -1,123 +1,75 @@
-# 🌸 Orchidia — Fashion Shopping App
+# Orchidia — Fashion Shopping App 🌸
 
-**Orchidia** adalah aplikasi mobile e-commerce fashion yang dikembangkan menggunakan Kotlin untuk memudahkan pengguna menjelajahi produk fashion, memilih barang, mengelola keranjang belanja, dan melakukan simulasi pembayaran melalui antarmuka yang modern dan feminin.
+Aplikasi mobile e-commerce fashion yang dirancang untuk memberikan pengalaman berbelanja fashion secara praktis dengan tampilan feminin, modern, dan bergaya Y2K.
 
-Aplikasi ini mengusung konsep visual **Y2K, girly, dan igari-inspired** dengan kombinasi warna putih, fuchsia pink, dan silver.
+## 1. Identitas Mahasiswa
 
-## ✨ Fitur Aplikasi
-
-* **Product Catalog** — Menampilkan daftar produk fashion beserta gambar, nama, harga, dan rating.
-* **Product Search** — Memudahkan pengguna mencari produk berdasarkan nama.
-* **Product Categories** — Mengelompokkan produk berdasarkan kategori fashion.
-* **Product Detail** — Menampilkan informasi produk yang dipilih.
-* **Shopping Cart** — Menambahkan produk ke keranjang, mengubah jumlah barang, dan menghapus produk.
-* **Checkout** — Menampilkan ringkasan pesanan, alamat pengiriman, pilihan ekspedisi, dan total pembayaran.
-* **Payment Simulation** — Menyediakan pilihan metode pembayaran serta simulasi BCA Virtual Account, countdown pembayaran, dan pengecekan status pembayaran.
-* **Order History** — Menyimpan dan menampilkan riwayat pesanan.
-* **Supabase Integration** — Mengambil data produk serta menyimpan data keranjang, pesanan, dan detail item pesanan ke backend.
-
-## 🛠️ Teknologi yang Digunakan
-
-| Teknologi      | Kegunaan                                    |
-| -------------- | ------------------------------------------- |
-| Kotlin         | Bahasa pemrograman aplikasi Android         |
-| Android Studio | IDE untuk pengembangan aplikasi             |
-| XML            | Membuat layout dan antarmuka aplikasi       |
-| Retrofit       | Menghubungkan aplikasi dengan REST API      |
-| Supabase       | Backend dan database aplikasi               |
-| Gson           | Mengonversi data JSON                       |
-| Coroutines     | Menjalankan proses asynchronous             |
-| Git & GitHub   | Version control dan penyimpanan source code |
-
-## 🚀 Cara Menjalankan Aplikasi
-
-### Persyaratan
-
-* Android Studio.
-* JDK yang sesuai dengan konfigurasi project.
-* Perangkat Android atau emulator dengan Android API yang memenuhi `minSdk` project.
-* Koneksi internet.
-* Project Supabase yang sudah dikonfigurasi.
-
-### Langkah Instalasi
-
-1. Clone repository:
-
-   ```bash
-   git clone https://github.com/USERNAME/REPOSITORY.git
-   ```
-
-2. Buka Android Studio, kemudian pilih **Open** dan arahkan ke folder project.
-
-3. Tunggu proses Gradle Sync hingga selesai.
-
-4. Pastikan konfigurasi `BASE_URL` dan API key Supabase tersedia secara lokal dan sesuai dengan project backend.
-
-5. Hubungkan perangkat Android atau jalankan emulator.
-
-6. Klik **Run** untuk membangun dan menjalankan aplikasi.
-
-### Konfigurasi Backend
-
-Aplikasi menggunakan Supabase sebagai backend. Sebelum dijalankan, pastikan tabel database yang diperlukan sudah dibuat, yaitu:
-
-* `products`
-* `cart_items`
-* `orders`
-* `order_items`
-
-Pastikan kebijakan Row Level Security (RLS) dan izin akses tabel sesuai dengan konfigurasi aplikasi.
-
-**Catatan:** Jangan menyimpan secret key atau `service_role` key Supabase di source code maupun repository publik.
-
-## 📸 Screenshot Aplikasi
-
-Screenshot aplikasi dapat dilihat pada bagian berikut.
-
-| Halaman                  | Screenshot                                  |
-| ------------------------ | ------------------------------------------- |
-| Landing Page             | Tambahkan screenshot landing page di sini   |
-| Home                     | Tambahkan screenshot halaman Home           |
-| Product Catalog / Search | Tambahkan screenshot katalog atau pencarian |
-| Product Detail           | Tambahkan screenshot detail produk          |
-| Shopping Cart            | Tambahkan screenshot keranjang              |
-| Checkout                 | Tambahkan screenshot checkout               |
-| Payment                  | Tambahkan screenshot pembayaran             |
-| Payment Success          | Tambahkan screenshot pembayaran berhasil    |
-
-Simpan gambar di folder `screenshots/`, kemudian gunakan format Markdown berikut:
-
-```markdown
-![Home Screen](screenshots/home.png)
-```
-
-## 📦 APK Aplikasi
-
-**Download APK:** [Tambahkan link APK di sini]
-
-File APK dapat dibagikan melalui GitHub Releases atau Google Drive dengan akses unduh yang sesuai.
-
-## 🎬 Video Demo
-
-**Video Demo Aplikasi:** [Tambahkan link video demo di sini]
-
-Video demonstrasi memperlihatkan alur penggunaan aplikasi mulai dari membuka halaman Home, memilih produk, mengelola keranjang, melakukan checkout, memilih metode pembayaran, hingga menampilkan halaman pembayaran berhasil.
-
-## 👩‍🎓 Identitas Mahasiswa
-
-| Keterangan       | Informasi                |
+| Keterangan       | Detail                   |
 | ---------------- | ------------------------ |
 | Nama             | Farah Amelia             |
+| NIM              | 42240183                 |
 | Program Studi    | Rekayasa Perangkat Lunak |
 | Perguruan Tinggi | STMIK IKMI Cirebon       |
-| Mata Kuliah      | [Isi nama mata kuliah]   |
-| Dosen Pengampu   | [Isi nama dosen]         |
-| Tahun Akademik   | 2026                     |
+| Kelas/Semester   | 5A-2024 (SEMESTER 5)     |
+| Mata Kuliah      | PEMROGRAMAN MOBILE DASAR |
+| Dosen Pengampu   | Rosidin, M.Kom           |
 
-## 📌 Catatan Pengembangan
+## 2. Nama Aplikasi
 
-Orchidia dikembangkan sebagai proyek pembelajaran pengembangan aplikasi Android berbasis Kotlin dan integrasi REST API. Pembayaran BCA Virtual Account dalam aplikasi merupakan **simulasi**, bukan transaksi atau verifikasi pembayaran BCA yang sebenarnya.
+**Orchidia — Fashion Shopping App**
+
+Orchidia merupakan aplikasi mobile untuk berbelanja produk fashion, seperti atasan, bawahan, dress, dan aksesori. Aplikasi ini mengusung konsep visual feminin dengan perpaduan warna putih, fuchsia pink, dan silver, serta sentuhan gaya Y2K.
+
+## 3. Deskripsi dan Fitur Aplikasi
+
+Orchidia dikembangkan untuk memudahkan pengguna dalam melihat katalog produk, mencari fashion item, mengelola keranjang belanja, dan melakukan simulasi pembayaran melalui perangkat Android.
+
+### Fitur Utama
+
+* **Katalog Produk:** Menampilkan produk fashion beserta gambar, nama, harga, dan rating.
+* **Pencarian Produk:** Memudahkan pengguna menemukan produk berdasarkan kata kunci.
+* **Detail Produk:** Menampilkan informasi produk yang dipilih.
+* **Keranjang Belanja:** Mendukung penambahan produk, perubahan kuantitas, dan penghapusan produk.
+* **Alamat Pengiriman:** Mengelola informasi alamat tujuan pengiriman.
+* **Pilihan Pengiriman:** Menyediakan opsi Reguler dan Express dengan perhitungan ongkos kirim.
+* **Simulasi Pembayaran:** Menyediakan pilihan metode pembayaran, termasuk simulasi BCA Virtual Account dengan nomor `123 456 7890` dan countdown.
+* **Konfirmasi Pembayaran:** Menyimulasikan keberhasilan pembayaran melalui tombol pengecekan status.
+* **Riwayat Pesanan:** Menyimpan informasi pesanan untuk ditinjau kembali.
+* **Integrasi Backend:** Mengambil data produk serta menyimpan data keranjang dan pesanan melalui Supabase.
+
+*Catatan: Pembayaran BCA Virtual Account merupakan simulasi untuk kebutuhan demonstrasi, bukan transaksi atau verifikasi pembayaran BCA yang sebenarnya.*
+
+## 4. Teknologi yang Digunakan
+
+| Teknologi      | Kegunaan                                                         |
+| -------------- | ---------------------------------------------------------------- |
+| Kotlin         | Bahasa pemrograman aplikasi Android                              |
+| Android Studio | IDE untuk pengembangan dan pengujian aplikasi                    |
+| XML            | Membuat layout dan antarmuka aplikasi                            |
+| Retrofit       | Menghubungkan aplikasi dengan REST API                           |
+| Supabase       | Backend dan database untuk data produk, keranjang, serta pesanan |
+| Git & GitHub   | Pengelolaan versi dan penyimpanan source code                    |
+
+## 5. Cara Menjalankan Aplikasi
+
+1. Buka tautan Google Drive pada bagian **Link APK**.
+2. Unduh file APK Orchidia ke perangkat Android.
+3. Buka file APK yang sudah diunduh.
+4. Jika diminta, izinkan pemasangan aplikasi dari sumber tersebut melalui pengaturan Android.
+5. Tekan **Install** dan tunggu hingga proses pemasangan selesai.
+6. Buka aplikasi Orchidia dan mulai gunakan fitur yang tersedia.
+7. Pastikan perangkat terhubung ke internet untuk menggunakan fitur yang memerlukan akses ke Supabase.
+
+**Catatan:** Aplikasi ditujukan untuk perangkat Android. Jika perangkat menampilkan peringatan keamanan saat instalasi, pastikan APK berasal dari tautan resmi yang dibagikan oleh pengembang.
+
+## 6. Link APK dan Video Demo
+
+* **Download APK:** [Masukkan tautan Google Drive APK]
+* **Video Demo Aplikasi:** [Masukkan tautan video demo]
+* **Repository GitHub:** https://github.com/farahamelia005-glitch/shop-app.git
+
+Video demo memperlihatkan alur penggunaan aplikasi mulai dari melihat katalog produk, mencari produk, mengelola keranjang, memilih alamat dan pengiriman, hingga menyelesaikan simulasi pembayaran.
 
 ---
 
-**Orchidia — Express Yourself Through Fashion 🌸**
+**Orchidia — Find Your Style, Express Yourself.** 🌸
