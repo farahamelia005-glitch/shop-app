@@ -11,6 +11,8 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        com.orchidia.fashion.data.remote.SupabaseTest.testConnection()
+
         // SEARCH
         findViewById<View>(R.id.btnSearch).setOnClickListener {
             startActivity(Intent(this, SearchActivity::class.java))
